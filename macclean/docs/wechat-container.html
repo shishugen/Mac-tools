@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>com.tencent.xinWeChat 内容说明</title><style>
+body{margin:0;background:#fff;color:#1d1d1f;font:14px/1.7 -apple-system,"PingFang SC",sans-serif;padding:36px 24px}
+main{max-width:1100px;margin:0 auto}
+h1{font-size:24px;font-weight:600;margin:0 0 4px}
+h2{font-size:17px;font-weight:600;margin:32px 0 12px;padding-bottom:8px;border-bottom:1px solid #e3e2dd}
+.sub{color:#86868b;margin-bottom:24px}
+.note{background:#f7f7f9;border-left:3px solid #0071e3;padding:12px 16px;border-radius:0 8px 8px 0;margin:18px 0;line-height:1.8}
+.warn{background:#fdf6e6;border-left-color:#b25000;color:#6b4a12}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0 24px}
+th,td{border:1px solid #e3e2dd;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f7f7f5;font-weight:500;color:#555}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+code{font:11.5px ui-monospace,Menlo,monospace;word-break:break-all;color:#444}
+.pol{font-size:10.5px;padding:1px 7px;border-radius:9px;white-space:nowrap}
+.yes{background:#eaf3de;color:#3b6d11}.no{background:#fcebeb;color:#a32d2d}
+.warnp{background:#faeeda;color:#854f0b}
+.metric{display:inline-block;background:#f7f7f9;border-radius:10px;padding:12px 18px;margin:0 10px 16px 0}
+.metric span{display:block;font-size:12px;color:#86868b}
+.metric b{font-size:22px;font-weight:500}
+</style></head><body><main>
+<h1>com.tencent.xinWeChat</h1>
+<p class="sub">只读扫描于 2026-11-26 16:07 · 未移动、未删除任何文件</p>
+<div class="metric"><span>容器总计</span><b>14.7 GB</b></div>
+<div class="metric"><span>可清理上限（估算）</span><b>12.9 GB</b></div>
+<div class="metric"><span>聊天附件文件</span><b>46,415 个</b></div>
+<div class="note">这个 14 GB 的容器里，<b>绝大部分是聊天记录里的图片、视频和收发过的文件</b>，不是微信程序本身。
+真正的聊天数据库只有几百 MB，但删了就没了；真正占地方的那 11 GB 附件，反而更适合清理。</div>
+<h2>逐层目录说明</h2>
+<table><tr><th style="width:32%">路径</th><th>大小</th><th>文件数</th><th>是干什么的</th><th>能不能删</th><th>删了会怎样</th></tr>
+<tr><td><code>Data/Library/Application Support/…/21a2…（当前账号）</code></td><td class='n'>12.9 GB</td><td class='n'>54121</td><td>当前账号的全部数据：聊天、联系人、收藏、表情</td><td><span class='pol yes'>不要随便删</span></td><td>删了等于清空这个账号在本机的数据</td></tr><tr><td><code>　└ Message（聊天数据总目录）</code></td><td class='n'>11.9 GB</td><td class='n'>46481</td><td>聊天记录数据库、全文索引和附件缓存</td><td><span class='pol no'>不可删</span></td><td>整目录删了聊天记录就没了</td></tr><tr><td><code>　　 └ MessageTemp（聊天附件缓存）</code></td><td class='n'>11.1 GB</td><td class='n'>46415</td><td>聊天图片、视频、语音、收发过的文件，按会话存在 hash 目录里</td><td><span class='pol warn'>可清但建议用微信自带清理</span></td><td>直接删会让旧聊天里的图片和文件显示不出来，微信可能重新下载</td></tr><tr><td><code>　└ Stickers（表情包）</code></td><td class='n'>978.7 MB</td><td class='n'>2795</td><td>表情包缓存</td><td><span class='pol yes'>可清</span></td><td>表情会重新下载</td></tr><tr><td><code>　└ Avatar（头像）</code></td><td class='n'>26.6 MB</td><td class='n'>4649</td><td>好友和群头像缓存</td><td><span class='pol yes'>可清</span></td><td>头像会重新下载</td></tr><tr><td><code>　└ Session / Contact / Account / Favorites 等</code></td><td class='n'>36.4 MB</td><td class='n'>106</td><td>会话、联系人、收藏、群资料</td><td><span class='pol no'>不可删</span></td><td>删了聊天列表和联系人会乱</td></tr><tr><td><code>Data/Library/Application Support/…/6a2b…（旧账号残留）</code></td><td class='n'>527.0 MB</td><td class='n'>3448</td><td>旧账号或早期会话残留的数据</td><td><span class='pol yes'>确认后清理</span></td><td>确认这个账号不再用之后可以删</td></tr><tr><td><code>Data/tmp/trash（微信内部回收站）</code></td><td class='n'>635.1 MB</td><td class='n'>142</td><td>微信内部回收站：删掉的图片视频暂存</td><td><span class='pol yes'>可清</span></td><td>清掉后微信里也恢复不了</td></tr><tr><td><code>Data/Library/Caches（应用缓存）</code></td><td class='n'>191.6 MB</td><td class='n'>1687</td><td>应用缓存（缩略图、临时下载）</td><td><span class='pol yes'>可清</span></td><td>应用会自动重建</td></tr><tr><td><code>Data/Library/HTTPStorages（网站数据）</code></td><td class='n'>269.4 KB</td><td class='n'>3</td><td>网站数据</td><td><span class='pol yes'>可清</span></td><td>删了要重新登录网页</td></tr><tr><td><code>Data/Library/Preferences（偏好设置）</code></td><td class='n'>3.3 KB</td><td class='n'>4</td><td>偏好设置</td><td><span class='pol no'>不可删</span></td><td>删了恢复默认设置</td></tr><tr><td><code>Data/.wxapplet（小程序缓存）</code></td><td class='n'>418.0 MB</td><td class='n'>948</td><td>微信小程序缓存</td><td><span class='pol yes'>可清</span></td><td>小程序会重新下载</td></tr></table>
+<div class="note warn"><b>重要：</b>聊天附件在 <code>MessageTemp/&lt;hash&gt;/</code> 里，每个 hash 目录对应一个会话或群。
+不建议在访达里手动删单个 hash 目录——聊天记录里会留下打不开的图片和文件。
+更稳的做法是用微信自带的「设置 → 通用 → 存储空间管理 → 清理缓存」。</div>
+<h2>MessageTemp 里的文件类型（共 11.1 GB）</h2>
+<table><tr><th>类型</th><th>数量</th><th>体积</th><th>是什么</th></tr>
+<tr><td><code>.zip</code></td><td class='n'>171</td><td class='n'>5.4 GB</td><td>收发过的压缩包</td></tr><tr><td><code>.jpg</code></td><td class='n'>39,871</td><td class='n'>3.1 GB</td><td>聊天图片</td></tr><tr><td><code>.mp4</code></td><td class='n'>349</td><td class='n'>907.1 MB</td><td>聊天视频</td></tr><tr><td><code>.exe</code></td><td class='n'>7</td><td class='n'>555.6 MB</td><td>收过的 Windows 程序</td></tr><tr><td><code>.jar</code></td><td class='n'>4</td><td class='n'>331.6 MB</td><td>收过的 Java 程序</td></tr><tr><td><code>.docx</code></td><td class='n'>87</td><td class='n'>191.0 MB</td><td>收过的 Word 文档</td></tr><tr><td><code>.pdf</code></td><td class='n'>56</td><td class='n'>163.1 MB</td><td>收过的 PDF</td></tr><tr><td><code>.dftemp</code></td><td class='n'>14</td><td class='n'>106.2 MB</td><td>下载中的临时文件</td></tr><tr><td><code>.silk</code></td><td class='n'>5,441</td><td class='n'>89.5 MB</td><td>微信语音消息</td></tr><tr><td><code>.rar</code></td><td class='n'>6</td><td class='n'>75.2 MB</td><td>收发过的压缩包</td></tr><tr><td><code>.7z</code></td><td class='n'>3</td><td class='n'>72.8 MB</td><td>收发过的压缩包</td></tr><tr><td><code>.xlsx</code></td><td class='n'>53</td><td class='n'>72.0 MB</td><td>收过的 Excel</td></tr><tr><td><code>.pptx</code></td><td class='n'>1</td><td class='n'>35.2 MB</td><td>其他聊天文件</td></tr><tr><td><code>.sql</code></td><td class='n'>1</td><td class='n'>33.2 MB</td><td>其他聊天文件</td></tr></table>
+<div class="note">注意那 <b>171 个 zip 占 5.4 GB</b>——它们是聊天里收发过的压缩包，
+删了之后对话框里的文件可能要重新下载，服务器上的旧文件可能已经取不回来了。这批属于「谨慎清理」，不是纯缓存。</div>
+</main></body></html>

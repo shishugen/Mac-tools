@@ -1,0 +1,1 @@
+{"default":{"identifier":"default","description":"macclean 默认能力：只允许前端调用本应用注册的命令","local":true,"windows":["main"],"permissions":["core:default"]}}

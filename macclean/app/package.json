@@ -1,0 +1,14 @@
+{
+  "name": "macclean-app",
+  "private": true,
+  "version": "0.1.0",
+  "description": "macOS 清理与卸载工具（Tauri + 本地 Python 引擎）",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0"
+  }
+}

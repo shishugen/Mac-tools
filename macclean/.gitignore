@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+app/target/
+app/node_modules/
+app/src/probe*.html
+reports/
